@@ -1,0 +1,45 @@
+{
+  "name": "firmachain-ibc-osmosis-web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "postbuild": "next-sitemap",
+    "deploy": "aws s3 sync ./build s3://deploy-ecosystem/mainnet/ibc-landing --profile=firmachain-deploy --delete",
+    "invalidate": "aws cloudfront create-invalidation --profile=firmachain-deploy --distribution-id EIM7Q64HS4CRM --paths '/*'"
+  },
+  "dependencies": {
+    "@keplr-wallet/types": "^0.12.111",
+    "@lottiefiles/react-lottie-player": "^3.5.3",
+    "@types/node": "20.4.9",
+    "@types/react": "18.2.19",
+    "@types/react-dom": "18.2.7",
+    "@types/xml2js": "^0.4.14",
+    "axios": "^1.5.0",
+    "date-fns": "2.30.0",
+    "date-fns-tz": "2.0.0",
+    "eslint": "8.46.0",
+    "eslint-config-next": "13.4.13",
+    "hamburger-react": "^2.5.0",
+    "moment": "^2.30.1",
+    "next": "13.4.13",
+    "next-seo": "^6.1.0",
+    "next-sitemap": "^4.2.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-fast-marquee": "^1.6.0",
+    "react-slick": "^0.29.0",
+    "react-svg": "^16.1.22",
+    "slick-carousel": "^1.8.1",
+    "styled-components": "^6.0.7",
+    "typescript": "5.1.6",
+    "xml2js": "^0.6.2"
+  },
+  "devDependencies": {
+    "@types/moment": "^2.13.0",
+    "@types/react-slick": "^0.23.10",
+    "@types/styled-components": "^5.1.26",
+    "babel-plugin-styled-components": "^2.1.4"
+  }
+}
