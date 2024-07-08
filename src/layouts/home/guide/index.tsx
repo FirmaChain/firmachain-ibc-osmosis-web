@@ -3,12 +3,9 @@ import React from 'react';
 import useDevice from '@/hooks/useDevice';
 import { GUIDE1, GUIDE2, GUIDE3, GUIDE4, GUIDE5 } from '@/constants/urls';
 
+import { TitleWrapper, LabelTypo, TitleTypo, DescriptionTypo } from '../common/styles';
 import {
   ContentsWrapper,
-  TitleWrapper,
-  LabelTypo,
-  TitleTypo,
-  DescriptionTypo,
   Guide1,
   Guide2,
   Guide3,
