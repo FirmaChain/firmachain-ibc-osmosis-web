@@ -1,3 +1,7 @@
+import { useEffect, useState } from 'react';
+
+import { getOsmosisData } from '@/utils/api';
+
 import Header from '@/layouts/common/header';
 import Footer from '@/layouts/common/footer';
 
@@ -9,13 +13,25 @@ import PoolSection from '@/layouts/home/pool';
 import { MainContainer } from '@/styles/home';
 
 const HomePage = () => {
+  const [osmosisData, setOsmosisData] = useState<any>({});
+
+  useEffect(() => {
+    getOsmosisData()
+      .then((data) => {
+        setOsmosisData(data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, []);
+
   return (
     <MainContainer>
       <Header />
       <MainSection />
       <OsmosisSection />
       <GuideSection />
-      <PoolSection />
+      <PoolSection osmosisData={osmosisData} />
       <Footer />
     </MainContainer>
   );
