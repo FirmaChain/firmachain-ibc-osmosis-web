@@ -14,6 +14,7 @@ const nextConfig = {
   },
   env: {
     API_HOST: process.env.API_HOST,
+    MEDIUM: process.env.MEDIUM,
   },
   exportPathMap: async () => {
     return {

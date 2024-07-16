@@ -10,6 +10,7 @@ import OsmosisSection from '@/layouts/home/osmosis';
 import GuideSection from '@/layouts/home/guide';
 import PoolSection from '@/layouts/home/pool';
 import SwapSection from '@/layouts/home/swap';
+import ArticleSection from '@/layouts/home/article';
 
 import { MainContainer } from '@/styles/home';
 
@@ -34,6 +35,7 @@ const HomePage = () => {
       <GuideSection />
       <PoolSection osmosisData={osmosisData} />
       <SwapSection osmosisData={osmosisData} />
+      <ArticleSection />
       <Footer />
     </MainContainer>
   );

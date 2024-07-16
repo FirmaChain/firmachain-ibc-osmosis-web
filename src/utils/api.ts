@@ -18,6 +18,10 @@ export interface ISwap {
   swapFee: string;
 }
 
+export const getMediumList = () => {
+  return axios.get<any>(process.env.MEDIUM!);
+};
+
 export const getOsmosisData = async () => {
   try {
     const { data } = await axios.get(`${process.env.API_HOST}/relayers/pools`);
