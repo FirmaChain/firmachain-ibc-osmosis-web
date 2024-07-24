@@ -33,7 +33,6 @@ export const ContentsWrapper = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 40px;
-  box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.08);
 
   @media only screen and (max-width: 1300px) {
     height: 1020px;
@@ -164,18 +163,17 @@ export const GuideRight = styled.div`
 `;
 
 export const PsTypo = styled.div`
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
   display: flex;
-  padding: 6px 16px;
+  gap: 5px;
+  margin-top: 15px;
   justify-content: center;
   align-items: center;
-  color: rgba(0, 0, 0, 0.6);
+  color: #adb2b8;
+  text-align: center;
   text-align: right;
   font-family: Inter;
   font-size: ${({ theme }) => theme.sizes.font14};
-  font-weight: 400;
+  font-weight: 500;
   line-height: 140%;
   letter-spacing: -0.14px;
   border-radius: 100px;
@@ -318,4 +316,13 @@ export const GuideMiniTypo = styled.div`
   line-height: 130%;
   letter-spacing: -0.18px;
   text-transform: capitalize;
+`;
+
+export const InfoIcon = styled.div`
+  width: 14px;
+  height: 14px;
+  background-image: url('${({ theme }) => theme.urls.info}');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 `;

@@ -26,6 +26,7 @@ import {
   OsmosisExchange,
   PsTypo,
   GuideMiniTypo,
+  InfoIcon,
 } from './styles';
 
 const GuideSection = () => {
@@ -36,8 +37,14 @@ const GuideSection = () => {
       <GuideSectionWrapper>
         <TitleWrapper>
           <LabelTypo>GUIDE</LabelTypo>
-          <TitleTypo>IBC Usage Guide</TitleTypo>
+          <TitleTypo>
+            <span className='special'>IBC</span> Usage Guide
+          </TitleTypo>
           <DescriptionTypo>A simple, easy, and datailed guide to connecting FIRMACHAIN and OSMOSIS.</DescriptionTypo>
+          <PsTypo>
+            <InfoIcon />
+            IBC transfers are not supported on mobile Keplr.
+          </PsTypo>
         </TitleWrapper>
         <ContentsWrapper>
           {isDesktopSub ? (
@@ -91,7 +98,6 @@ const GuideSection = () => {
           )}
 
           <OsmosisExchange />
-          <PsTypo>*IBC transfers are not supported on mobile Keplr.</PsTypo>
         </ContentsWrapper>
       </GuideSectionWrapper>
     </GuideSectionContainer>

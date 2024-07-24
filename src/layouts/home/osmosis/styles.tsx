@@ -158,6 +158,8 @@ export const KeplrIcon = styled(ReactSVG as any)`
 
 export const LinkList = styled.div`
   width: 100%;
+  max-width: 1200px;
+
   z-index: 3;
   display: flex;
   justify-content: center;
@@ -173,6 +175,7 @@ export const LinkList = styled.div`
 `;
 
 export const LinkItem = styled(Link)`
+  width: 100%;
   padding: 34px 16px 34px 40px;
   display: flex;
   justify-content: space-between;

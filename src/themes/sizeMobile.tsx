@@ -3,6 +3,7 @@ const sizes = {
   mediaMobile: '800px',
   mediaQHDWidth: '2000px',
 
+  font12: '10px',
   font14: '11px',
   font16: '12px',
   font18: '13px',
@@ -13,6 +14,8 @@ const sizes = {
   font32: '22px',
   font44: '28px',
   font48: '32px',
+  font56: '44px',
+
   font100: '50px',
 };
 

@@ -11,6 +11,7 @@ export interface IPool {
   volume24hUsdText: string;
   poolLiquidity: string;
   swapFee: string;
+  poolAssets: { denom: string; amount: string; weight: string }[];
 }
 
 export interface ISwap {
@@ -27,26 +28,47 @@ export const getOsmosisData = async () => {
     const { data } = await axios.get(`${process.env.API_HOST}/relayers/pools`);
     const result = data.result;
 
-    const poolList = result.map((pool: any) => {
-      const poolId = pool.id;
+    const poolList = result
+      .map((pool: any) => {
+        const poolId = pool.id;
 
-      const poolName = pool.poolNameByDenom;
-      const volume24hUsd = JSON.parse(pool.volume24hUsd);
-      const volume24hUsdText = `${volume24hUsd.fiat.symbol}${volume24hUsd.amount.match(/^-?\d+(?:\.\d{0,2})?/)[0]}`;
-      const totalFiatValueLocked = JSON.parse(pool.totalFiatValueLocked);
-      const poolLiquidity = `${totalFiatValueLocked.fiat.symbol}${
-        totalFiatValueLocked.amount.match(/^-?\d+(?:\.\d{0,2})?/)[0]
-      }`;
-      const swapFee = `${(parseFloat(pool.raw.pool_params.swap_fee) * 100).toFixed(1)}%`;
+        const poolName = pool.poolNameByDenom;
+        const volume24hUsd = JSON.parse(pool.volume24hUsd);
+        const volume24hUsdText = `${volume24hUsd.fiat.symbol}${volume24hUsd.amount.match(/^-?\d+(?:\.\d{0,2})?/)[0]}`;
+        const totalFiatValueLocked = JSON.parse(pool.totalFiatValueLocked);
+        const poolLiquidity = `${totalFiatValueLocked.fiat.symbol}${
+          totalFiatValueLocked.amount.match(/^-?\d+(?:\.\d{0,2})?/)[0]
+        }`;
+        const swapFee = `${(parseFloat(pool.raw.pool_params.swap_fee) * 100).toFixed(1)}%`;
 
-      return {
-        poolId,
-        poolName,
-        volume24hUsdText,
-        poolLiquidity,
-        swapFee,
-      };
-    });
+        const totalWeight = parseFloat(pool.raw.total_weight);
+
+        const poolAssets = pool.raw.pool_assets.map((asset: any, index: number) => {
+          const denom = asset.token.denom;
+          const amount = (parseFloat(asset.token.amount) / 10 ** 6).toFixed();
+          const denomIndex = pool.coinDenoms.indexOf(denom);
+          const parsedDenom = denomIndex > 0 ? pool.coinDenoms[denomIndex - 1] : denom;
+
+          const weight = parseFloat(asset.weight);
+          const weightPercentage = ((weight / totalWeight) * 100).toFixed(0);
+
+          return {
+            denom: parsedDenom,
+            amount,
+            weight: weightPercentage + '%',
+          };
+        });
+
+        return {
+          poolId,
+          poolName,
+          volume24hUsdText,
+          poolLiquidity,
+          swapFee,
+          poolAssets,
+        };
+      })
+      .sort((a: any, b: any) => parseInt(a.poolId) - parseInt(b.poolId));
 
     const osmoPool = result[0];
     const ufct = osmoPool.raw.pool_assets[0].token.amount;

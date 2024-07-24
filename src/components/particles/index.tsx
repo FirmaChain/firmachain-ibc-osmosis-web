@@ -23,7 +23,7 @@ const Particle = () => {
         autoPlay: true,
         clear: true,
         fullScreen: {
-          enable: true,
+          enable: false,
           zIndex: 0,
         },
         detectRetina: true,

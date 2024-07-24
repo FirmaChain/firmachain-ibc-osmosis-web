@@ -46,6 +46,12 @@ export const TitleTypo = styled.div`
   & > span {
     color: #5e31ff;
   }
+  & > span.special {
+    background: linear-gradient(90deg, #8a86ff 0.04%, #e13cbd 99.5%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
   margin-bottom: 20px;
 

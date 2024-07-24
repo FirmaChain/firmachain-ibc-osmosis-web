@@ -36,6 +36,8 @@ const urls = {
   introLink2: '/images/ic_intro_link2.svg',
   introLink3: '/images/ic_intro_link3.svg',
   keplr: '/images/ic_keplr.svg',
+  info: '/images/ic_info.png',
+  poolBg: '/images/img_pool_bg.png',
   coinList: [
     'images/ic_coin_1.png',
     'images/ic_coin_2.png',

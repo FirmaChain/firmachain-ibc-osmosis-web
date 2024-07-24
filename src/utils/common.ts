@@ -73,3 +73,13 @@ export const convertDate = (date: string) => {
   if (date === undefined) return '';
   return moment(new Date(date)).format('MMM DD, YYYY');
 };
+
+export const numberWithCommas = (value: number | string): string => {
+  let num = typeof value === 'number' ? value : parseFloat(value);
+
+  if (isNaN(num)) {
+    return '-';
+  }
+
+  return num.toLocaleString('en-US');
+};

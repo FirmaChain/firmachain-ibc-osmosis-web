@@ -56,6 +56,17 @@ export const MainSectionWrapper = styled.div`
   align-items: center;
   margin-top: 140px;
 
+  #tsparticles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 0;
+    margin: 0;
+    z-index: 0;
+  }
+
   @media only screen and (max-width: ${({ theme }) => theme.sizes.mediaMobile}) {
     padding: 0 20px;
   }
@@ -205,7 +216,7 @@ export const PlanetTitle = styled.div`
   text-align: center;
   text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.6);
   font-family: Inter;
-  font-size: 56px;
+  font-size: ${({ theme }) => theme.sizes.font56};
   font-weight: 700;
   line-height: 140%;
   letter-spacing: -0.56px;
@@ -219,7 +230,7 @@ export const PlanetDescription = styled.div`
   text-align: center;
   text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.6);
   font-family: Inter;
-  font-size: 32px;
+  font-size: ${({ theme }) => theme.sizes.font32};
   font-weight: 400;
   line-height: 140%;
   letter-spacing: -0.32px;
@@ -233,7 +244,7 @@ export const DownArrow = styled.div`
   width: calc(20px * 1.5);
   height: calc(16px * 1.5);
   position: absolute;
-  bottom: 50px;
+  bottom: 30px;
   z-index: 20;
   background-image: url('${({ theme }) => theme.urls.downArrow2}');
   background-repeat: no-repeat;
