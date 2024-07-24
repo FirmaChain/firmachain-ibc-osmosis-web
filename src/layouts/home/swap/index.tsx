@@ -66,9 +66,9 @@ const SwapSection = ({ osmosisData }: { osmosisData: IOsmosisData | null }) => {
       <SwapSectionWrapper>
         <TitleWrapper>
           <LabelTypo>SWAP</LabelTypo>
-          <TitleTypo>Easily FCT Swap</TitleTypo>
+          <TitleTypo>Easily $FCT Swap</TitleTypo>
           <DescriptionTypo>
-            Effortlessly convert your FCT to other cryptocurrencies on the OSMOSIS Exchange.
+            Effortlessly convert your $FCT to other cryptocurrencies on the OSMOSIS Exchange.
           </DescriptionTypo>
         </TitleWrapper>
         <ContentsWrapper>

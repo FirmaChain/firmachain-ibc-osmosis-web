@@ -99,7 +99,7 @@ export const LinkTypo = styled.div`
   text-transform: uppercase;
 `;
 
-export const LinkIcon = styled(ReactSVG)`
+export const LinkIcon = styled(ReactSVG as any)`
   width: 14px;
   height: 14px;
 
@@ -131,7 +131,7 @@ export const SocialItem = styled(Link)`
   backdrop-filter: blur(5px);
 `;
 
-export const SocialIcon = styled(ReactSVG)`
+export const SocialIcon = styled(ReactSVG as any)`
   width: 20px;
   height: 20px;
 
@@ -144,7 +144,7 @@ export const SocialIcon = styled(ReactSVG)`
   }
 `;
 
-export const FooterLogo = styled(ReactSVG)`
+export const FooterLogo = styled(ReactSVG as any)`
   width: 152px;
   height: 38px;
   cursor: pointer;

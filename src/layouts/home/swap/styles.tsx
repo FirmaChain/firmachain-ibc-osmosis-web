@@ -59,7 +59,7 @@ export const SwapLogoWrapper = styled.div`
   gap: 5px;
 `;
 
-export const SwapLogo = styled(ReactSVG)`
+export const SwapLogo = styled(ReactSVG as any)`
   width: 24px;
   height: 24px;
 
@@ -219,7 +219,7 @@ export const SwapIconWrapper = styled.div`
   }
 `;
 
-export const SwapIcon = styled(ReactSVG)`
+export const SwapIcon = styled(ReactSVG as any)`
   width: 26px;
   height: 17px;
 
@@ -272,7 +272,7 @@ export const CurrencyTypo = styled.div`
   letter-spacing: -0.2px;
 `;
 
-export const DownArrow = styled(ReactSVG)`
+export const DownArrow = styled(ReactSVG as any)`
   width: 12px;
   height: 12px;
 

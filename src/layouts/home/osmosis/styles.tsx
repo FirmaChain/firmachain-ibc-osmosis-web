@@ -143,7 +143,7 @@ export const ConnectButton = styled.div`
   backdrop-filter: blur(10px);
 `;
 
-export const KeplrIcon = styled(ReactSVG)`
+export const KeplrIcon = styled(ReactSVG as any)`
   width: 24px;
   height: 24px;
 
@@ -199,7 +199,7 @@ export const LinkIcon = styled.div`
   background: #5e31ff;
 `;
 
-export const LinkIconImage = styled(ReactSVG)`
+export const LinkIconImage = styled(ReactSVG as any)`
   width: 28px;
   height: 28px;
 
@@ -236,7 +236,7 @@ export const LinkDescription = styled.div`
   letter-spacing: -0.16px;
 `;
 
-export const RightArrow = styled(ReactSVG)`
+export const RightArrow = styled(ReactSVG as any)`
   width: calc(18px * 1.5);
   height: calc(9px * 1.5);
 

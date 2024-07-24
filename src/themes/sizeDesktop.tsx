@@ -1,6 +1,8 @@
 const sizes = {
   maxWidth: '1500px',
   mediaMobile: '800px',
+  mediaQHDWidth: '2000px',
+
   font14: '14px',
   font16: '16px',
   font18: '18px',

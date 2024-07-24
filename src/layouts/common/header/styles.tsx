@@ -26,7 +26,7 @@ export const HeaderWrapper = styled.div`
   align-items: center;
 `;
 
-export const HeaderLogo = styled(ReactSVG)`
+export const HeaderLogo = styled(ReactSVG as any)`
   width: 136px;
   height: 34px;
 

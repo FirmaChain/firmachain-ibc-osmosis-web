@@ -14,15 +14,6 @@ import {
 
 const Header = () => {
   const { theme } = useTheme();
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(scrollY >= 50);
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   return (
     <HeaderContainer>
