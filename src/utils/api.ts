@@ -74,7 +74,7 @@ export const getOsmosisData = async () => {
     const ufct = osmoPool.raw.pool_assets[0].token.amount;
     const uosmo = osmoPool.raw.pool_assets[1].token.amount;
     const swapFee = `${(parseFloat(osmoPool.raw.pool_params.swap_fee) * 100).toFixed(1)}%`;
-    const fctosmo = (uosmo / ufct).toFixed(6);
+    const fctosmo = (uosmo / ufct).toFixed(3);
 
     const swapData = {
       fctosmo,

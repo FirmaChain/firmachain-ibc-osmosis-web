@@ -71,4 +71,10 @@ export const TabItem = styled.div<{ $active: boolean }>`
     $active &&
     'background:linear-gradient(90deg, #ac3def 0%, #5e31ff 100%);box-shadow: 0px 0px 5px 0px rgba(39, 0, 179, 0.5);'};
   border-radius: 100px;
+
+  @media only screen and (max-width: ${({ theme }) => theme.sizes.mediaMobile}) {
+    width: auto;
+
+    padding: 8px 40px 9px 40px;
+  }
 `;

@@ -1,13 +1,14 @@
 import React from 'react';
 
 import { IOsmosisData } from '@/utils/api';
+import Pool from './pool';
+import Swap from './swap';
 
 import { TitleWrapper, LabelTypo, TitleTypo, DescriptionTypo } from '../common/styles';
 import { ContentsWrapper, PoolSectionContainer, PoolSectionWrapper, TabList, TabItem } from './styles';
-import Pool from './pool';
 
 const PoolSection = ({ osmosisData }: { osmosisData: IOsmosisData | null }) => {
-  const [tabIndex, setTabIndex] = React.useState(0);
+  const [tabIndex, setTabIndex] = React.useState(1);
 
   return (
     <PoolSectionContainer>
@@ -29,6 +30,7 @@ const PoolSection = ({ osmosisData }: { osmosisData: IOsmosisData | null }) => {
             </TabItem>
           </TabList>
           {tabIndex === 0 && <Pool osmosisData={osmosisData} />}
+          {tabIndex === 1 && <Swap osmosisData={osmosisData} />}
         </ContentsWrapper>
       </PoolSectionWrapper>
     </PoolSectionContainer>

@@ -40,8 +40,10 @@ export const PoolItem = styled.div`
   overflow: hidden;
 
   @media only screen and (max-width: ${({ theme }) => theme.sizes.mediaMobile}) {
-    padding: 50px 20px 20px 20px;
-    margin-top: 40px;
+    border-radius: 20px;
+
+    padding: 25px 25px 20px 25px;
+    margin-top: 10px;
   }
 `;
 
