@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
 import useTheme from '@/hooks/useTheme';
 import useDevice from '@/hooks/useDevice';
@@ -26,12 +26,12 @@ import {
   LinkIconImage,
 } from './styles';
 
-const OsmosisSection = () => {
+const OsmosisSection = forwardRef<HTMLDivElement, {}>((_, ref) => {
   const { theme } = useTheme();
   const { isMobile } = useDevice();
 
   return (
-    <OsmosisSectionContainer>
+    <OsmosisSectionContainer ref={ref}>
       <OsmosisSectionWrapper>
         <OsmosisBg />
         <OsomosisIcon>
@@ -87,6 +87,6 @@ const OsmosisSection = () => {
       </OsmosisSectionWrapper>
     </OsmosisSectionContainer>
   );
-};
+});
 
 export default React.memo(OsmosisSection);

@@ -25,7 +25,6 @@ export const SwapSectionWrapper = styled.div`
 
 export const ContentsWrapper = styled.div`
   width: 100%;
-  max-width: ${({ theme }) => theme.sizes.maxWidth};
   position: relative;
   display: flex;
   flex-direction: column;

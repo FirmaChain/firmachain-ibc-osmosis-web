@@ -27,7 +27,6 @@ export const getMediumList = () => {
 export const getFCTPrice = async () => {
   try {
     const { data } = await axios.get(COINGECKO);
-    console.log(data);
     return data.firmachain.usd.toFixed(6);
   } catch (e) {
     console.error(e);
@@ -88,7 +87,6 @@ export const getOsmosisData = async () => {
     const swapFee = `${(parseFloat(osmoPool.raw.pool_params.swap_fee) * 100).toFixed(1)}%`;
     const fctosmo = (uosmo / ufct).toFixed(5);
 
-    console.log(osmoPool.raw.pool_assets);
     const swapData = {
       fctosmo,
       swapFee,

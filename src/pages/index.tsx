@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import { getOsmosisData } from '@/utils/api';
 
@@ -15,6 +15,8 @@ import { MainContainer } from '@/styles/home';
 
 const HomePage = () => {
   const [osmosisData, setOsmosisData] = useState<any>({});
+  const [isOsmosisVisible, setIsOsmosisVisible] = useState(false);
+  const osmosisSectionRef = useRef(null);
 
   useEffect(() => {
     getOsmosisData()
@@ -24,13 +26,34 @@ const HomePage = () => {
       .catch((e) => {
         console.log(e);
       });
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        console.log(entry.isIntersecting);
+        setIsOsmosisVisible(entry.isIntersecting);
+      },
+      {
+        threshold: 0,
+        rootMargin: '-10% 0px 0px 0px',
+      }
+    );
+
+    if (osmosisSectionRef.current) {
+      observer.observe(osmosisSectionRef.current);
+    }
+
+    return () => {
+      if (osmosisSectionRef.current) {
+        observer.unobserve(osmosisSectionRef.current);
+      }
+    };
   }, []);
 
   return (
     <MainContainer>
       <Header />
       <MainSection />
-      <OsmosisSection />
+      <OsmosisSection ref={osmosisSectionRef} />
       <GuideSection />
       <PoolSection osmosisData={osmosisData} />
       <ArticleSection />

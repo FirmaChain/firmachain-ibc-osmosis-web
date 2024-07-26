@@ -25,7 +25,6 @@ export const GuideSectionWrapper = styled.div`
 
 export const ContentsWrapper = styled.div`
   width: 100%;
-  max-width: ${({ theme }) => theme.sizes.maxWidth};
   padding: 80px 0;
   position: relative;
   display: flex;

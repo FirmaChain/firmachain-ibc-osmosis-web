@@ -11,7 +11,6 @@ export const HeaderContainer = styled.header`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: black;
 
   @media only screen and (max-width: ${({ theme }) => theme.sizes.mediaMobile}) {
     padding: 15px 10px 15px 10px;

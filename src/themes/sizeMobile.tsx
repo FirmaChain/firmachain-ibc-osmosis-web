@@ -1,5 +1,5 @@
 const sizes = {
-  maxWidth: '1500px',
+  maxWidth: '1900px',
   mediaMobile: '800px',
   mediaQHDWidth: '2000px',
 

@@ -25,7 +25,7 @@ export const ArticleSectionWrapper = styled.div`
 
 export const ContentsWrapper = styled.div`
   width: 100%;
-  max-width: ${({ theme }) => theme.sizes.maxWidth};
+  max-width: 1500px;
   position: relative;
   display: flex;
   flex-direction: column;

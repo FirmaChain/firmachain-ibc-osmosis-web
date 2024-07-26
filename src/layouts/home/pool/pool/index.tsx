@@ -40,7 +40,6 @@ const Pool = ({ osmosisData }: { osmosisData: IOsmosisData | null }) => {
   const sliderRef = useRef<any>();
 
   const poolList = useMemo(() => {
-    console.log(osmosisData);
     if (osmosisData && osmosisData.poolList) return osmosisData.poolList;
     return [];
   }, [osmosisData]);

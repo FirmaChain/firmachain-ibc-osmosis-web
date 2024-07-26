@@ -10,6 +10,8 @@ export const PoolSectionContainer = styled.section`
 
 export const PoolSectionWrapper = styled.div`
   width: calc(100% - 48px - 48px);
+  max-width: ${({ theme }) => theme.sizes.maxWidth};
+
   padding: 100px 30px;
   display: flex;
   flex-direction: column;
