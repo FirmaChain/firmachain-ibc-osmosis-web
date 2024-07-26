@@ -43,6 +43,10 @@ export const Planet = styled.div<{
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+
+  @media only screen and (max-width: ${({ theme }) => theme.sizes.mediaMobile}) {
+    display: none;
+  }
 `;
 
 export const PlanetBg = styled.div`

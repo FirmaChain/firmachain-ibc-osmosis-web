@@ -8,7 +8,7 @@ import { TitleWrapper, LabelTypo, TitleTypo, DescriptionTypo } from '../common/s
 import { ContentsWrapper, PoolSectionContainer, PoolSectionWrapper, TabList, TabItem } from './styles';
 
 const PoolSection = ({ osmosisData }: { osmosisData: IOsmosisData | null }) => {
-  const [tabIndex, setTabIndex] = React.useState(1);
+  const [tabIndex, setTabIndex] = React.useState(0);
 
   return (
     <PoolSectionContainer>

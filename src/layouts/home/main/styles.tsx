@@ -27,7 +27,8 @@ export const dungdung = keyframes`
 export const MainSectionContainer = styled.section`
   width: 100%;
   height: calc(var(--vh, 1vh) * 170);
-  min-height: 680px;
+  min-height: 1300px;
+
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -41,7 +42,8 @@ export const MainSectionContainer = styled.section`
   background-position: center;
 
   @media only screen and (max-width: ${({ theme }) => theme.sizes.mediaMobile}) {
-    max-height: 800px;
+    max-height: 900px;
+    min-height: 900px;
   }
   @media only screen and (min-width: ${({ theme }) => theme.sizes.mediaQHDWidth}) {
     height: calc(var(--vh, 1vh) * 137);
@@ -194,6 +196,10 @@ export const PlanetWrapper = styled.div`
   width: 10px;
   height: 10px;
   top: 970px;
+
+  @media only screen and (max-width: ${({ theme }) => theme.sizes.mediaMobile}) {
+    top: 600px;
+  }
 `;
 
 export const PlanetTypoWrapper = styled.div<{ $visible: boolean }>`
