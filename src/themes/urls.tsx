@@ -38,6 +38,7 @@ const urls = {
   keplr: '/images/ic_keplr.svg',
   info: '/images/ic_info.png',
   poolBg: '/images/img_pool_bg.png',
+  swapChart: '/images/img_swap_chart.png',
   coinList: [
     'images/ic_coin_1.png',
     'images/ic_coin_2.png',

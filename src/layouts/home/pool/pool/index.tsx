@@ -20,7 +20,6 @@ import {
   InfoList,
   InfoValue,
   PoolButton,
-  ChartImage,
   CustomSliderWrapper,
   GuageContainer,
   GuageCurrencyWrapper,

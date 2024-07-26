@@ -2,50 +2,18 @@ import { ReactSVG } from 'react-svg';
 import styled from 'styled-components';
 import Link from 'next/link';
 
-export const SwapSectionContainer = styled.section`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-top: 10px;
-`;
-
-export const SwapSectionWrapper = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-
-export const ContentsWrapper = styled.div`
-  width: 100%;
-  max-width: ${({ theme }) => theme.sizes.maxWidth};
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-
-export const SwapCard = styled.div`
+export const SwapCardMobile = styled.div`
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 620px;
   display: flex;
-  padding: 30px 50px 30px 50px;
+  padding: 22px 20px 24px 20px;
   flex-direction: column;
   align-items: center;
-  gap: 28px;
+  gap: 24px;
   border-radius: 24px;
   background: #f8f9fa;
   box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.12);
-
-  @media only screen and (max-width: ${({ theme }) => theme.sizes.mediaMobile}) {
-    padding: 22px 20px 24px 20px;
-  }
 `;
 
 export const SwapLogoWrapper = styled.div`
@@ -147,6 +115,7 @@ export const SwapButton = styled(Link)`
   color: #fff;
   text-align: center;
   font-family: Inter;
+  cursor: pointer;
   font-size: ${({ theme }) => theme.sizes.font18};
   font-weight: 600;
   line-height: 140%;
@@ -172,14 +141,6 @@ const SwapBaseWrapper = styled.div`
 `;
 
 export const FCTWrapper = styled(SwapBaseWrapper)`
-  background: #fff;
-  & > div:nth-child(1) > div:nth-child(1) {
-    border-radius: 10000px;
-    background: #000;
-  }
-`;
-
-export const OSMOWrapper = styled(SwapBaseWrapper)`
   background: #31353a;
 
   & > div:nth-child(1) > div {
@@ -190,8 +151,16 @@ export const OSMOWrapper = styled(SwapBaseWrapper)`
   }
   & > div:nth-child(1) > div:nth-child(1) {
     border-radius: 10000px;
-    background: #fff;
-    padding: 2px 3px 1px 1px;
+    background: #000;
+    padding: 3px 3px 3px 3px;
+  }
+`;
+
+export const OSMOWrapper = styled(SwapBaseWrapper)`
+  background: #fff;
+  & > div:nth-child(1) > div:nth-child(1) {
+    border-radius: 10000px;
+    background: #000;
   }
 `;
 
@@ -239,12 +208,14 @@ export const Currency = styled.div`
 export const CurrencyIcon = styled.div`
   width: 24px;
   height: 24px;
-  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const CurrencyIconImage = styled.div<{ src: string }>`
-  width: 100%;
-  height: 100%;
+  width: 15px;
+  height: 15px;
   background-image: url('${({ src }) => src}');
   background-repeat: no-repeat;
   background-size: contain;
@@ -281,4 +252,142 @@ export const Value = styled.div`
   font-weight: 600;
   line-height: 140%;
   letter-spacing: -0.22px;
+`;
+
+export const SwapCardDesktop = styled.div`
+  width: 100%;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 40px;
+  border-radius: 40px;
+  background: #fff;
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.08);
+`;
+
+export const FCTPriceWrapper = styled.div`
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+
+  background-image: url('${({ theme }) => theme.urls.swapChart}');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center bottom;
+`;
+
+export const FCTInfoWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+`;
+
+export const FCTIconWrapper = styled.div`
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  border-radius: 100px;
+`;
+
+export const FCTIcon = styled.div<{ src: string }>`
+  width: 24px;
+  height: 24px;
+  background-image: url('${({ src }) => src}');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+`;
+
+export const FCTChainName = styled.div`
+  color: #31353a;
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 140%;
+  letter-spacing: -0.2px;
+`;
+
+export const FCTDenom = styled.div`
+  color: #787f87;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: -0.16px;
+`;
+
+export const FCTPrice = styled.div`
+  width: 100%;
+
+  color: #121416;
+  font-family: Inter;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 140%;
+  letter-spacing: -0.32px;
+`;
+
+export const SwapCardWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  padding: 40px 32px 36px 32px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+
+  border-radius: 40px;
+  background: #f4f4f6;
+
+  & > ${SwapInfoWrapper} {
+    height: 55px;
+  }
+
+  & > ${SwapWrapper} {
+    flex-direction: row;
+
+    & > ${OSMOWrapper} {
+      flex-direction: column;
+      gap: 10px;
+      padding: 20px 0;
+    }
+
+    & > ${FCTWrapper} {
+      flex-direction: column;
+      gap: 10px;
+      padding: 20px 0;
+    }
+
+    & > ${SwapIconWrapper} {
+      transform: rotate(90deg);
+
+      div {
+        width: calc(14px * 1.5);
+        height: calc(12px * 1.5);
+      }
+
+      svg {
+        width: calc(14px * 1.5);
+        height: calc(12px * 1.5);
+      }
+    }
+  }
+
+  & > ${SwapButton} {
+    border: 0 !important;
+    border-radius: 100px;
+    background: linear-gradient(90deg, #6841f2 0.04%, #e13cbd 99.5%);
+  }
 `;

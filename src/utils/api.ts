@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { COINGECKO } from '@/constants/urls';
 
 export interface IOsmosisData {
   poolList: IPool[];
@@ -21,6 +22,17 @@ export interface ISwap {
 
 export const getMediumList = () => {
   return axios.get<any>(process.env.MEDIUM!);
+};
+
+export const getFCTPrice = async () => {
+  try {
+    const { data } = await axios.get(COINGECKO);
+    console.log(data);
+    return data.firmachain.usd.toFixed(6);
+  } catch (e) {
+    console.error(e);
+    return '-';
+  }
 };
 
 export const getOsmosisData = async () => {
@@ -70,12 +82,13 @@ export const getOsmosisData = async () => {
       })
       .sort((a: any, b: any) => parseInt(a.poolId) - parseInt(b.poolId));
 
-    const osmoPool = result[0];
+    const osmoPool = result.find((v: any) => v.poolNameByDenom === 'FCT/OSMO');
     const ufct = osmoPool.raw.pool_assets[0].token.amount;
     const uosmo = osmoPool.raw.pool_assets[1].token.amount;
     const swapFee = `${(parseFloat(osmoPool.raw.pool_params.swap_fee) * 100).toFixed(1)}%`;
-    const fctosmo = (uosmo / ufct).toFixed(3);
+    const fctosmo = (uosmo / ufct).toFixed(5);
 
+    console.log(osmoPool.raw.pool_assets);
     const swapData = {
       fctosmo,
       swapFee,

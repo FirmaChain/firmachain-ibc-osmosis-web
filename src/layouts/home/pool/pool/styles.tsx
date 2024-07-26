@@ -3,26 +3,10 @@ import styled from 'styled-components';
 
 export const PoolList = styled.div`
   width: 100%;
-  max-width: 1200px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 32px;
-
-  margin-top: 40px;
-
-  @media only screen and (max-width: ${({ theme }) => theme.sizes.mediaMobile}) {
-    flex-direction: column;
-    margin-top: 0;
-
-    & > div:nth-child(1) {
-      margin-top: 20px;
-    }
-
-    & > div:nth-child(2) {
-      margin-top: 50px;
-    }
-  }
 `;
 
 export const PoolItem = styled.div`
@@ -41,9 +25,7 @@ export const PoolItem = styled.div`
 
   @media only screen and (max-width: ${({ theme }) => theme.sizes.mediaMobile}) {
     border-radius: 20px;
-
     padding: 25px 25px 20px 25px;
-    margin-top: 10px;
   }
 `;
 

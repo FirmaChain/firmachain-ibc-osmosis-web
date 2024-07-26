@@ -43,7 +43,7 @@ const SwapSection = ({ osmosisData }: { osmosisData: IOsmosisData | null }) => {
   const exampleCurrency = useMemo(() => {
     try {
       if (osmosisData !== null) {
-        return (parseFloat(osmosisData.swapData.fctosmo) * 100).toFixed(6);
+        return (parseFloat(osmosisData.swapData.fctosmo) * 100).toFixed(3);
       } else {
         return 0;
       }

@@ -14,6 +14,8 @@ export const POOL_BASE = 'https://app.osmosis.zone/pool';
 
 export const OSMOSIS_SWAP = 'https://app.osmosis.zone/?from=FCT&to=OSMO';
 
+export const COINGECKO = 'https://api.coingecko.com/api/v3/simple/price?ids=firmachain&vs_currencies=usd';
+
 export const POOL_FCT =
   'https://app.osmosis.zone/pools?searchQuery=fct&poolTypesFilter=weighted,stable,concentrated,cosmwasm-transmuter&poolIncentivesFilter=superfluid,osmosis,boost,none';
 
