@@ -26,12 +26,12 @@ import {
   LinkIconImage,
 } from './styles';
 
-const OsmosisSection = forwardRef<HTMLDivElement, {}>((_, ref) => {
+const OsmosisSection = () => {
   const { theme } = useTheme();
   const { isMobile } = useDevice();
 
   return (
-    <OsmosisSectionContainer ref={ref}>
+    <OsmosisSectionContainer>
       <OsmosisSectionWrapper>
         <OsmosisBg />
         <OsomosisIcon>
@@ -87,6 +87,6 @@ const OsmosisSection = forwardRef<HTMLDivElement, {}>((_, ref) => {
       </OsmosisSectionWrapper>
     </OsmosisSectionContainer>
   );
-});
+};
 
 export default React.memo(OsmosisSection);

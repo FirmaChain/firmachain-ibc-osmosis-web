@@ -124,6 +124,7 @@ export const InfoDivider = styled.div`
 
 export const PoolButton = styled(Link)`
   width: 100%;
+  z-index: 3;
   display: flex;
   padding: 16px 10px;
   justify-content: center;

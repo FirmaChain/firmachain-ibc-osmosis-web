@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 import useTheme from '@/hooks/useTheme';
+import useDevice from '@/hooks/useDevice';
+
 import { ConnectKeplr } from '@/utils/common';
 
 import {
@@ -12,16 +14,17 @@ import {
   HeaderWrapper,
 } from './styles';
 
-const Header = () => {
+const Header = ({ isTopSection }: { isTopSection: boolean }) => {
   const { theme } = useTheme();
+  const { isMobile } = useDevice();
 
   return (
     <HeaderContainer>
-      <HeaderWrapper>
+      <HeaderWrapper $isTopSection={isTopSection}>
         <HeaderLogo src={theme.urls.firmaLogo} />
         <HeaderButtonWrapper>
           <HeaderButton onClick={() => ConnectKeplr()}>
-            <HeaderButtonTypo>Keplr Connect</HeaderButtonTypo>
+            <HeaderButtonTypo>Connect{isMobile ? ' ' : ' with '}Keplr</HeaderButtonTypo>
           </HeaderButton>
         </HeaderButtonWrapper>
       </HeaderWrapper>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { forwardRef, useEffect, useState } from 'react';
 
 import useTheme from '@/hooks/useTheme';
 import Particle from '@/components/particles';
@@ -27,7 +27,7 @@ const planets = [
   { src: theme.urls.planet3, width: 60, height: 60, diameter: 60.6, speed: 150, startAngle: 340 },
 ];
 
-const MainSection = () => {
+const MainSection = forwardRef<HTMLDivElement, {}>((_, ref) => {
   const { theme } = useTheme();
   const [visible, setVisible] = useState(false);
 
@@ -43,7 +43,7 @@ const MainSection = () => {
   }, []);
 
   return (
-    <MainSectionContainer>
+    <MainSectionContainer ref={ref}>
       <MainSectionWrapper>
         <Particle />
         <MainSectionLabel>
@@ -67,6 +67,8 @@ const MainSection = () => {
       <DownArrow />
     </MainSectionContainer>
   );
-};
+});
+
+MainSection.displayName = 'MainSection';
 
 export default React.memo(MainSection);
