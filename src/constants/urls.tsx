@@ -20,14 +20,14 @@ export const POOL_FCT =
   'https://app.osmosis.zone/pools?searchQuery=fct&poolTypesFilter=weighted,stable,concentrated,cosmwasm-transmuter&poolIncentivesFilter=superfluid,osmosis,boost,none';
 
 export const GUIDE_GENERAL =
-  'https://firmachain.notion.site/FIRMACHAIN-OSMOSIS-IBC-Usage-Guide-EN-81e0a672aa904dffaf82e0c10394bec6';
+  'https://firmachain.notion.site/FIRMACHAIN-OSMOSIS-IBC-Usage-Guide-EN-d2835f59ef494772a18d8986f2e7819c';
 
-export const GUIDE1 = 'https://firmachain.notion.site/1-Keplr-Settings-e9dd954459ef45b2a6a7ed19770f7c23';
+export const GUIDE1 = 'https://firmachain.notion.site/1-Keplr-Settings-ecfeb4dba5134913a4a98d979e32db79';
 export const GUIDE2 =
-  'https://firmachain.notion.site/2-FirmaChain-Osomosis-IBC-75e762f2690448db943053d23d9f4481#0e2ded97bca749bb8adebc6497504378';
+  'https://firmachain.notion.site/2-2-IBC-Sending-Osmosis-d39f0d1165574b05b21a187eb5aeafe6?pvs=25#1a6e246e059e4f5b8a070aba3b9e0307';
 export const GUIDE3 =
-  'https://firmachain.notion.site/2-FirmaChain-Osomosis-IBC-75e762f2690448db943053d23d9f4481#636b50e593cc473a8d16469d6d498f50';
+  'https://firmachain.notion.site/2-2-IBC-Sending-Osmosis-d39f0d1165574b05b21a187eb5aeafe6?pvs=25#d4fd99ec526e477d909df4a2c818c7fb';
 export const GUIDE4 =
-  'https://firmachain.notion.site/3-Using-FCT-on-Osmosis-7a68c74878224e42b66fc97f73e3e012#c11b931ba0e345608a34e111f3353904';
+  'https://firmachain.notion.site/3-Using-FCT-on-Osmosis-800181185bec4ada9f91ac1b4176e723?pvs=25#d4b24d37f02c4ba0b8221d36c6236417';
 export const GUIDE5 =
-  'https://firmachain.notion.site/3-Using-FCT-on-Osmosis-7a68c74878224e42b66fc97f73e3e012#3f6788e602a34f09bec790c9689af54a';
+  'https://firmachain.notion.site/3-Using-FCT-on-Osmosis-800181185bec4ada9f91ac1b4176e723?pvs=25#bcc29acc9cfb465eae13ca8faf8446dd';
